@@ -23,38 +23,24 @@ Feature Engineering & Selection: Reduce dimensionality using PCA, select most re
 Model Training: Train and compare multiple classifiers including Logistic Regression, Decision Tree, Random Forest, KNN, SVM, and Gradient Boosting
 
 Model Evaluation: Evaluate using accuracy, precision, recall, F1-score, and confusion matrix to understand class-wise performance.
-Models Used
-
+Models Used:
 Logistic Regression
-
 Decision Tree
-
 Random Forest
-
 K-Nearest Neighbors (KNN)
-
 Support Vector Machine (SVM)
-
 Gradient Boosting
 
-Evaluation Metrics
+Evaluation Metrics:
 
-Accuracy – overall model correctness
+Accuracy – overall model correctness,
 
-Precision – class-wise positive prediction quality
+Precision – class-wise positive prediction quality,
 
-Recall – ability to identify all positive cases
+Recall – ability to identify all positive cases,
 
-F1-Score – balance between precision and recall
+F1-Score – balance between precision and recall,
 
-Confusion Matrix – detailed class-wise performance visualization
+Confusion Matrix – detailed class-wise performance visualization.
 
-Use Cases
 
-Smart diet planning applications
-
-Health and fitness tracking tools
-
-Automated food logging systems
-
-Educational nutrition platforms
