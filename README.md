@@ -76,18 +76,5 @@ Cross-validation was performed to ensure the selected model generalizes well. Co
 
 The system can be integrated into smart diet applications where users input nutritional targets and receive a predicted food option instantly. This supports automation and strict diet adherence.
 
-Limitations:
-
-If certain food classes have very limited samples, model generalization may weaken. Additionally, real-world deployment would require continuous data updates and model retraining.
-
-Future enhancements could include:
-
-Adding micronutrient features
-
-Hyperparameter tuning using GridSearchCV
-
-Deploying the model using Flask or FastAPI
-
-Integrating recommendation capabilities alongside classification.
-
-It demonstrates how machine learning can transform structured nutritional data into actionable decision-making systems.
+SUMMARY:
+   “I developed a multi-class classification system that predicts exact food names based on nutritional metrics to support strict diet planning applications. I performed preprocessing, feature scaling, model benchmarking, and evaluation using accuracy and F1-score. Random Forest achieved the best performance, and cross-validation confirmed strong generalization. The system demonstrates real-time applicability for automated meal planning and health tracking.”
