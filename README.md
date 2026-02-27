@@ -1,46 +1,93 @@
-This project is formulated as a supervised multiclass classification problem. Each food item represents a unique class, and the model learns from labeled nutritional data to classify inputs into one of many possible food categories.
+This project develops a multi-class classification model that predicts the exact food name based on nutritional attributes such as calories, protein, carbohydrates, fats, and sugar. The objective is to build a strict diet-compliant system that selects one precise food option based on nutritional requirements.
 
-Why Multiclass Classification?
+Business Motivation:
+      In structured diet-planning systems, users often specify nutritional goals such as high-protein or low-sugar meals. Instead of loosely recommending multiple options, this system ensures strict classification by predicting one exact food that aligns with predefined dietary constraints.
 
-The target variable (Food Name) contains multiple categories
+Problem Type:
+      This is a supervised multi-class classification problem where the input features are numerical nutritional metrics and the target variable is the food name.
 
-Each nutritional profile corresponds to exactly one food item
+Dataset Description:
+      The dataset consists of tabular nutritional information where each row represents a unique food item. Nutritional metrics serve as predictive features, and the food name is the label to be predicted.
 
-Ensures strict control in diet planning scenarios
+Feature Selection Strategy:
+      Only core nutritional features were selected: Calories, Protein, Carbohydrates, Fats, and Sugar. These were chosen because they directly align with diet planning logic and reduce noise from irrelevant categorical attributes.
 
-Business Objective
-:
-To automate food selection in health-focused applications by accurately classifying foods based on nutritional profiles, reducing manual errors and improving adherence to diet plans.
+Data Cleaning and Preprocessing:
+      The preprocessing pipeline included removing duplicates, handling missing values, validating numeric data types, and standardizing numerical features to ensure model stability and fair comparison across algorithms.
 
-Approach: 
+Feature Scaling:
+      StandardScaler was applied to normalize feature magnitudes. This step was especially important for distance-based models like KNN and SVM, which are sensitive to feature scale.
 
-Data Understanding & EDA: Explore data distribution, class balance, and visualize feature trends
+Target Encoding:
+      Since the target variable was categorical (food name), Label Encoding was applied to convert food names into numerical labels suitable for classification algorithms.
 
-Data Preprocessing: Handle missing values, remove duplicates, treat outliers, and scale numeric features
+Train-Test Split Strategy:
+      The dataset was split into training and testing sets using an 80-20 ratio with a fixed random state to ensure reproducibility and unbiased evaluation.
 
-Feature Engineering & Selection: Reduce dimensionality using PCA, select most relevant features to improve model efficiency
+The following models were evaluated:
 
-Model Training: Train and compare multiple classifiers including Logistic Regression, Decision Tree, Random Forest, KNN, SVM, and Gradient Boosting
+Logistic Regression. 1
 
-Model Evaluation: Evaluate using accuracy, precision, recall, F1-score, and confusion matrix to understand class-wise performance.
-Models Used:
-Logistic Regression
-Decision Tree
-Random Forest
-K-Nearest Neighbors (KNN)
-Support Vector Machine (SVM)
-Gradient Boosting
+Decision Tree . 2
 
-Evaluation Metrics:
+Random Forest .3
 
-Accuracy – overall model correctness,
+K-Nearest Neighbors.4
 
-Precision – class-wise positive prediction quality,
+Support Vector Machine.5
 
-Recall – ability to identify all positive cases,
+Gradient Boosting.6
 
-F1-Score – balance between precision and recall,
-
-Confusion Matrix – detailed class-wise performance visualization.
+This provided a comparison between linear, tree-based, ensemble, and distance-based approaches.
 
 
+Model performance was evaluated using:
+
+Accuracy
+
+Precision
+
+Recall
+
+F1-score
+
+Confusion Matrix
+
+Cross-validation accuracy.
+
+F1-score was emphasized due to the multi-class nature of the dataset.
+
+Handling Class Distribution:
+Class distribution was analyzed before training. Since macro and weighted F1-scores were closely aligned, severe imbalance was not observed, and additional resampling techniques were not required.
+
+ Best Performing Model:
+
+    Random Forest achieved the highest accuracy and macro F1-score. Its ensemble learning approach improved generalization and reduced overfitting compared to single decision trees.
+
+Feature Importance Analysis:
+
+    Feature importance from the Random Forest model indicated that protein and fat were strong differentiating factors among food categories, validating domain logic in diet planning.
+
+Overfitting Check:
+
+Cross-validation was performed to ensure the selected model generalizes well. Comparable training and validation performance confirmed minimal overfitting.
+
+ Real-Time Applicability:
+
+The system can be integrated into smart diet applications where users input nutritional targets and receive a predicted food option instantly. This supports automation and strict diet adherence.
+
+Limitations:
+
+If certain food classes have very limited samples, model generalization may weaken. Additionally, real-world deployment would require continuous data updates and model retraining.
+
+Future enhancements could include:
+
+Adding micronutrient features
+
+Hyperparameter tuning using GridSearchCV
+
+Deploying the model using Flask or FastAPI
+
+Integrating recommendation capabilities alongside classification.
+
+It demonstrates how machine learning can transform structured nutritional data into actionable decision-making systems.
